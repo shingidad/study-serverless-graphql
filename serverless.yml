@@ -8,12 +8,13 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
   environment:
     SLS_DEBUG: true
 
 functions:
   graphql:
-    handler: handler.graphql
+    handler: src/handler.graphql
     events:
       - http:
           path: graphql
