@@ -1,26 +1,20 @@
-import { ApolloServer, gql } from 'apollo-server-lambda'
+import { ApolloServer } from 'apollo-server-lambda'
 import {
   APIGatewayProxyEvent,
   APIGatewayProxyResult,
   Handler,
 } from 'aws-lambda'
+import 'reflect-metadata'
+import { buildSchema } from 'type-graphql'
+import resolvers from './resolvers'
 
 async function createHandler() {
-  const typeDefs = gql`
-    type Query {
-      hello: String
-    }
-  `
-
-  const resolvers = {
-    Query: {
-      hello: () => 'hello world',
-    },
-  }
+  ;(global as any).schema =
+    (global as any).schema || (await buildSchema({ resolvers, validate: true }))
+  const schema = (global as any).schema
 
   const server = new ApolloServer({
-    typeDefs,
-    resolvers,
+    schema,
     playground: true,
   })
   return server.createHandler({ cors: { origin: '*', credentials: true } })

@@ -9,10 +9,16 @@
   },
   "dependencies": {
     "apollo-server-lambda": "^2.13.1",
-    "source-map-support": "^0.5.10"
+    "bufferutil": "^4.0.1",
+    "graphql": "^15.0.0",
+    "reflect-metadata": "^0.1.13",
+    "source-map-support": "^0.5.10",
+    "subscriptions-transport-ws": "^0.9.16",
+    "type-graphql": "^1.0.0-rc.2",
+    "utf-8-validate": "^5.0.2"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.17",
+    "@types/aws-lambda": "^8.10.51",
     "@types/node": "^14.0.5",
     "fork-ts-checker-webpack-plugin": "^3.0.1",
     "serverless-offline": "^6.1.7",
