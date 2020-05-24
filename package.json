@@ -11,10 +11,13 @@
     "apollo-server-lambda": "^2.13.1",
     "bufferutil": "^4.0.1",
     "graphql": "^15.0.0",
+    "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.10",
     "subscriptions-transport-ws": "^0.9.16",
     "type-graphql": "^1.0.0-rc.2",
+    "typedi": "^0.8.0",
+    "typeorm": "^0.2.25",
     "utf-8-validate": "^5.0.2"
   },
   "devDependencies": {
