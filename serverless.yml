@@ -14,7 +14,7 @@ provider:
     NODE_DEV: ${self:provider.stage}
     MYSQL_HOST: ${self:custom.mysqlHost.${self:provider.stage}} 
     MYSQL_PORT: ${self:custom.mysqlPort.${self:provider.stage}}
-    MYSQL_USER: ${self:custom.mysqlUSER.${self:provider.stage}}
+    MYSQL_USER: ${self:custom.mysqlUser.${self:provider.stage}}
     MYSQL_PASS: ${self:custom.mysqlPass.${self:provider.stage}}
     MYSQL_DATABASE: ${self:custom.mysqlDatabase.${self:provider.stage}}
     MYSQL_SYNC: ${self:custom.mysqlSync.${self:provider.stage}}

@@ -1,16 +1,31 @@
-```shell
-mkdir board
-cd board
-sls create --template aws-nodejs-typescript
-yarn
-code .
+# Serverless Graphql Study
+
+## Graphql
+
+### 회원가입
+
+Mutation
+
+```graphql
+mutation RegisterUser($registerUser: RegisterInput!) {
+  register(data: $registerUser) {
+    id
+    email
+    nickname
+    role
+    createAt
+  }
+}
 ```
 
-```shell
-yarn remove webpack
-```
+Query Variables
 
-```shell
-yarn
-yarn add -D serverless-offline @types/node ts-loader typescript webpack-node-externals serverless-plugin-typescript
+```json
+{
+  "registerUser": {
+    "email": "shingidad@gmail.com",
+    "nickname": "신기아빠",
+    "password": "112tlsrldkQK@!123"
+  }
+}
 ```

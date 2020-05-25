@@ -1,7 +1,7 @@
 version: '3.7'
 services:
     board:
-        container_name: baord
+        container_name: board
         image: mysql:5.7.27
         restart: always
         environment: 
