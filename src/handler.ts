@@ -7,11 +7,14 @@ import {
 import 'reflect-metadata'
 import { buildSchema } from 'type-graphql'
 import resolvers from './resolvers'
+import database from './util/database'
 
 async function createHandler() {
   ;(global as any).schema =
     (global as any).schema || (await buildSchema({ resolvers, validate: true }))
   const schema = (global as any).schema
+
+  await database()
 
   const server = new ApolloServer({
     schema,
