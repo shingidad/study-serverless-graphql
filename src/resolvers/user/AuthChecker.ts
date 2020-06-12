@@ -50,6 +50,8 @@ export const userAuthChecker: AuthChecker<AppContext> = (
   }
 
   if (role && role.length > 0) {
+    console.log('role', role)
+    console.log('authData.role', authData.role)
     if (role.indexOf(authData.role) === -1) {
       throw new Error('권한이 없습니다.')
     }

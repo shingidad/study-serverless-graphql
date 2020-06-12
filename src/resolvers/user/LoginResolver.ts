@@ -30,7 +30,7 @@ export class LoginResolver {
       throw new Error('아이디와 암호를 확인해주세요.')
     }
 
-    user.token = this.makeToken(user.id, user.nickname, user.email, user.role)
+    user.token = this.makeToken(user.id, user.email, user.nickname, user.role)
     return user
   }
 
@@ -38,16 +38,16 @@ export class LoginResolver {
    * Json create
    * @param id
    * @param email
-   * @param nickanme
+   * @param nickname
    * @param role
    */
   private makeToken(
     id: number,
     email: string,
-    nickanme: string,
+    nickname: string,
     role: UserRole
   ): string {
-    return jwt.sign({ id, email, nickanme, role }, config.jwtSecret, {
+    return jwt.sign({ id, email, nickname, role }, config.jwtSecret, {
       expiresIn: '30d',
     })
   }
