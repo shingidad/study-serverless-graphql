@@ -1,6 +1,7 @@
-import { User } from './User'
 import { Category } from './Category'
-
-const entities = [Category, User]
+import { Comment } from './Comment'
+import { Post } from './Post'
+import { User } from './User'
+const entities = [Category, Comment, Post, User]
 
 export default entities

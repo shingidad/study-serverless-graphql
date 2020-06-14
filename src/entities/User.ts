@@ -5,7 +5,10 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   Column,
+  OneToMany,
 } from 'typeorm'
+import { Post } from './Post'
+import { Comment } from './Comment'
 export enum UserRole {
   admin = 'admin',
   user = 'user',
@@ -36,4 +39,10 @@ export class User extends BaseEntity {
   @Field()
   @CreateDateColumn()
   public createAt: Date
+
+  @OneToMany(() => Post, (post) => post.user)
+  public posts: Post[]
+
+  @OneToMany(() => Comment, (target) => target.user)
+  public comments: Comment[]
 }
